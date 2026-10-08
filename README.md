@@ -77,8 +77,30 @@ cd GSoC25_H  # Example: Hindi Chapter
 ```
 
 > **Important**: Each GSoC project has unique dependencies and setup requirements. Always refer to the README in the specific project directory.
+## 🚀 Usage Example
 
----
+After completing the setup for a project, you can run an extraction pipeline using the project's provided interface.
+
+For example, the GSoC 2026 project exposes an extraction API:
+
+```bash
+curl -X POST localhost:8000/extract \
+  -H "Content-Type: application/json" \
+  -d '{"text": "The song Mermaid is by the band Train."}'
+ ```
+Example output:
+
+```json
+{
+  "triples": [
+    {
+      "sub": "Mermaid_(Train_song)",
+      "rel": "artist",
+      "obj": "Train_(band)"
+    }
+  ]
+}
+```
 
 ## 🎓 Project Structure
 
