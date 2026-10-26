@@ -88,19 +88,12 @@ curl -X POST localhost:8000/extract \
   -H "Content-Type: application/json" \
   -d '{"text": "The song Mermaid is by the band Train."}'
  ```
-Example output:
+Response format:
 
-```json
-{
-  "triples": [
-    {
-      "sub": "Mermaid_(Train_song)",
-      "rel": "artist",
-      "obj": "Train_(band)"
-    }
-  ]
-}
-```
+The API returns a nested response object:
+
+- "response["triples"]["triples"]" contains the extracted triples that were kept.
+- "response["triples"]["results"]" contains per-triple status information and details.
 
 ## 🎓 Project Structure
 
